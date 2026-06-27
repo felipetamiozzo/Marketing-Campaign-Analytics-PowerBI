@@ -42,12 +42,16 @@ O dashboard foi projetado como uma aplicação interativa, dividida em 4 pilares
 ## 🖥️ Telas do Dashboard
 
 ### 1. Visão do Cliente
+![Visão Cliente](assets/visao_cliente.png)
 
 ### 2. Visão de Comportamento
+![Visão Comportamento](assets/visao_comportamento.png)
 
 ### 3. Visão de Campanhas
+![Visão Campanhas](assets/visao_campanhas.png)
 
 ### 4. Visão de Ponto de Vendas
+![Visão Ponto de Vendas](assets/visao_pv.png)
 
 ---
 
