@@ -11,6 +11,19 @@ O projeto conta com mais de 10 elementos visuais otimizados, formatações condi
 
 ---
 
+## 📁 Estrutura do Repositório
+O projeto foi organizado para facilitar a compreensão do fluxo de dados, versionamento e documentação:
+
+📁 Marketing-Campaign-Analytics-PowerBI
+ ┣ 📂 assets                        # Prints e imagens utilizadas no dashboard
+ ┣ 📂 data                          # Base de dados original (Datasets)
+ ┣ 📂 dax_scripts                   # Scripts auxiliares e lógica de cartões HTML/CSS
+ ┣ 📂 Marketing_Analytics.Report    # Metadados do relatório (Padrão .pbip)
+ ┣ 📂 Marketing_Analytics.SemanticModel # Metadados do modelo de dados (Padrão .pbip)
+ ┣ 📄 Marketing_Analytics.pbip      # Arquivo de projeto (Versão técnica versionada)
+ ┣ 📄 Marketing_Analytics.pbix      # Arquivo de projeto (Versão clássica)
+ ┗ 📄 README.md                     # Documentação completa do projeto
+
 ## 🎯 Estrutura de Análise (Módulos)
 O dashboard foi projetado como uma aplicação interativa, dividida em 4 pilares analíticos:
 
