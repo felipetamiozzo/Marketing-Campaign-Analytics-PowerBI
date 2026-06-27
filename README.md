@@ -1,5 +1,5 @@
 
-```markdown
+
 # 🚀 Marketing Campaign Analytics | PowerBI
 
 ![Capa do Projeto](assets/capa.png) 
@@ -129,4 +129,4 @@ git clone [https://github.com/SeuUsuario/Marketing-Analytics-PowerBI.git](https:
 
 ```
 
-```
+
