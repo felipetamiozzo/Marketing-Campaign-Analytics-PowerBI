@@ -1,6 +1,5 @@
 
-
-# 🚀 Marketing Campaign Analytics | PowerBI
+# Marketing Campaign Analytics | PowerBI
 
 ![Capa do Projeto](assets/capa.png) 
 
@@ -21,11 +20,16 @@ O projeto foi organizado para facilitar a compreensão do fluxo de dados, versio
  ┣ 📂 dax_scripts                   # Lógica de cartões HTML/CSS
  ┣ 📂 Marketing_Analytics.Report    # Metadados do relatório (.pbip)
  ┣ 📂 Marketing_Analytics.SemanticModel # Metadados do modelo (.pbip)
- ┣ 📄 Marketing_Analytics.pbip      # Projeto (Versão técnica)
+ ┣ 📄 Marketing_Analytics.pbip      # Projeto (Versão técnica versionada)
  ┣ 📄 Marketing_Analytics.pbix      # Projeto (Versão clássica)
- ┗ 📄 README.md                     # Documentação do projeto                    # Documentação completa do projeto
+ ┗ 📄 README.md                     # Documentação completa do projeto
+
+```
+
+---
 
 ## 🎯 Estrutura de Análise (Módulos)
+
 O dashboard foi projetado como uma aplicação interativa, dividida em 4 pilares analíticos:
 
 1. **Visão do Cliente:** Análise demográfica aprofundada (idade, escolaridade, estado civil e média salarial).
@@ -38,37 +42,40 @@ O dashboard foi projetado como uma aplicação interativa, dividida em 4 pilares
 ## 🖥️ Telas do Dashboard
 
 ### 1. Visão do Cliente
-![Visão Cliente](assets/visao_cliente.png)
 
 ### 2. Visão de Comportamento
-![Visão Comportamento](assets/visao_comportamento.png)
 
 ### 3. Visão de Campanhas
-![Visão Campanhas](assets/visao_campanhas.png)
 
 ### 4. Visão de Ponto de Vendas
-![Visão Ponto de Vendas](assets/visao_pv.png)
 
 ---
 
 ## ⚙️ ETL e Tratamento de Dados (Power Query)
-Os dados brutos passaram por um rigoroso processo de limpeza e transformação no Power Query Editor para garantir a integridade do modelo:
 
-* **Tabela Fato (`dados_mkt`):** 
-  * Promoção de cabeçalhos e filtragem de linhas nulas/inválidas.
-  * Padronização de dados (múltiplas etapas de `Valor Substituído` para corrigir inconsistências, ex: mapeando flags de compra).
-  * Tipagem estrita de dados para otimização de performance.
+Os dados brutos passaram por um rigoroso processo de limpeza e transformação no Power Query Editor:
+
+* **Tabela Fato (`dados_mkt`):**
+* Promoção de cabeçalhos e filtragem de linhas nulas/inválidas.
+* Padronização de dados (mapeamento de flags de compra).
+* Tipagem estrita de dados para otimização de performance.
+
+
 * **Dimensão de Tempo (`dim_calendario`):**
-  * Tabela gerada dinamicamente a partir das datas de cadastro.
-  * Extração de features temporais (Ano, Mês, Dia).
-  * Criação de `Coluna Condicional` para nomes de meses e remoção de duplicatas para garantir integridade referencial (Relacionamento 1:N).
+* Tabela gerada dinamicamente a partir das datas de cadastro.
+* Extração de features temporais (Ano, Mês, Dia).
+* Criação de coluna condicional e remoção de duplicatas (Relacionamento 1:N).
+
+
 
 ---
 
 ## 🧠 Modelagem e Linguagem DAX
-O projeto utiliza um modelo relacional otimizado e uma tabela de medidas (Measure Table) isolada para organização de cálculos complexos. Abaixo estão algumas das principais métricas desenvolvidas em DAX:
+
+O projeto utiliza um modelo relacional otimizado e uma tabela de medidas isolada. Abaixo, algumas das principais métricas desenvolvidas:
 
 **Retenção e Engajamento:**
+
 ```dax
 Retenção Campanhas = 
 VAR ComprouUma = CALCULATE(COUNTROWS(dados_mkt), dados_mkt[Total Campanhas] >= 1)
@@ -95,13 +102,11 @@ DIVIDE(
 
 ```
 
-**Métricas de Receita e Volume:**
+**Métricas de Receita:**
 
 ```dax
 Total Clientes = DISTINCTCOUNT(dados_mkt[ID])
-
 Ticket Médio = AVERAGE(dados_mkt[Total Gasto])
-
 Compras Web = DIVIDE(SUM(dados_mkt[Numero de Compras na Web]), 1000)
 
 ```
@@ -110,37 +115,25 @@ Compras Web = DIVIDE(SUM(dados_mkt[Numero de Compras na Web]), 1000)
 
 ## 🎨 UI/UX e Data Storytelling
 
-Para elevar a experiência do usuário final, o visual padrão do Power BI foi substituído por técnicas avançadas de design e navegação:
-
-* **HTML Content no DAX:** Criação de botões de navegação e cartões de indicadores renderizados inteiramente via código HTML/CSS dentro de medidas DAX (com degradês, sombras dinâmicas e ícones SVG customizados).
-* **Navegação Transparente:** Uso de botões invisíveis sobrepostos aos elementos HTML para garantir uma transição de páginas fluida.
-* **Dark Mode & Paleta Estratégica:** Utilização de fundo escuro com destaques categóricos (Verde e Amarelo para os maiores ofensores/resultados) e paleta contrastante (Coral vs. Cinza) para destacar a taxa de sucesso das campanhas sem sobrecarregar a visão (Data Storytelling).
-* **Tabelas Flutuantes:** Matrizes formatadas com fundos transparentes, barras de dados integradas e total remoção de poluição visual.
+* **HTML Content no DAX:** Criação de botões e cartões renderizados via código HTML/CSS (degradês, sombras e ícones SVG).
+* **Navegação Transparente:** Uso de botões invisíveis sobrepostos para transições fluidas.
+* **Paleta Estratégica:** Dark mode com destaques categóricos (Verde e Amarelo) para guiar o olhar.
 
 ---
 
 ## 🚀 Como Visualizar
 
-1. Faça o clone deste repositório:
-
-```bash
-git clone [https://github.com/SeuUsuario/Marketing-Analytics-PowerBI.git](https://github.com/SeuUsuario/Marketing-Analytics-PowerBI.git)
-
-```
-
+1. Faça o clone: `git clone https://github.com/felipetamiozzo/Marketing-Campaign-Analytics-PowerBI.git`
 2. Abra o arquivo `Marketing_Analytics.pbix` no Power BI Desktop.
-3. Navegue utilizando os botões interativos na página inicial.
 
 ---
 
 ## 👨‍💻 Autor
 
-**Felipe Tamiozzo**
-*Analista de Dados*
+**Felipe Tamiozzo** | *Analista de Dados*
 
-* [LinkedIn](https://www.google.com/search?q=https://linkedin.com/in/felipetamiozzo/)
-* [Portfólio/GitHub](https://github.com/felipetamiozzo)
+* [LinkedIn](https://www.google.com/search?q=https%3A%2F%2Fwww.linkedin.com%2Fin%2Ffelipetamiozzo%2F)
+* [GitHub](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Ffelipetamiozzo)
 
 ```
-
 
