@@ -1,0 +1,76 @@
+table dim_calendario
+	lineageTag: a471908b-30c6-40d7-829a-c58d3055fb4f
+
+	column Data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 13835a81-db24-46fc-acaf-e008a4f200fa
+		summarizeBy: none
+		sourceColumn: Data
+
+		variation Variation
+			isDefault
+			relationship: 94b15377-b906-4717-b95f-efbaf8e81513
+			defaultHierarchy: LocalDateTable_e0b84615-430d-46e3-a98c-eac51beacc63.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 78247756-358f-48c4-8b25-752bea8ab0f0
+		summarizeBy: sum
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês
+		dataType: int64
+		formatString: 0
+		lineageTag: acabc682-842a-4306-a535-c9ce98de7c3d
+		summarizeBy: sum
+		sourceColumn: Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		dataType: int64
+		formatString: 0
+		lineageTag: 702c3f28-1c7c-4517-9a9f-4903b2aa9c4d
+		summarizeBy: sum
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Mês'
+		dataType: string
+		lineageTag: 4515f520-3ddf-4848-b77e-d26046401d80
+		summarizeBy: none
+		sourceColumn: Nome Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_calendario = m
+		mode: import
+		source =
+				let
+				    Fonte = dados_mkt,
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"Data Cadastro"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas"),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Duplicatas Removidas",{{"Data Cadastro", "Data"}}),
+				    #"Ano Inserido" = Table.AddColumn(#"Colunas Renomeadas", "Ano", each Date.Year([Data]), Int64.Type),
+				    #"Mês Inserido" = Table.AddColumn(#"Ano Inserido", "Mês", each Date.Month([Data]), Int64.Type),
+				    #"Dia Inserido" = Table.AddColumn(#"Mês Inserido", "Dia", each Date.Day([Data]), Int64.Type),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Dia Inserido", "Dia do Mes", each if [Mês] = 1 then "Janeiro" else if [Mês] = 2 then "Fevereiro" else if [Mês] = 3 then "Março" else if [Mês] = 4 then "Abril" else if [Mês] = 5 then "Maio" else if [Mês] = 6 then "Junho" else if [Mês] = 7 then "Julho" else if [Mês] = 8 then "Agosto" else if [Mês] = 9 then "Setembro" else if [Mês] = 10 then "Outubro" else if [Mês] = 11 then "Novembro" else if [Mês] = 12 then "Dezembro" else null),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Coluna Condicional Adicionada",{{"Dia do Mes", "Nome Mês"}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas1",{{"Ano", Int64.Type}}),
+				    #"Duplicatas Removidas1" = Table.Distinct(#"Tipo Alterado", {"Data"})
+				in
+				    #"Duplicatas Removidas1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

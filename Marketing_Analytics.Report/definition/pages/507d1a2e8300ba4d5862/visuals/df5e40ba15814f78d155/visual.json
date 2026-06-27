@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "df5e40ba15814f78d155",
+  "position": {
+    "x": 227.65606595995288,
+    "y": 108.5512367491166,
+    "z": 7000,
+    "height": 93.474676089517075,
+    "width": 188.45700824499409,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Card Média Salarial"
+                }
+              },
+              "queryRef": "Medidas.Card Média Salarial",
+              "nativeQueryRef": "Card Média Salarial"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

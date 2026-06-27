@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 134,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 16,
+            "y": 0
+          },
+          "nodeIndex": "dados_mkt",
+          "nodeLineageTag": "263f8791-f9b4-4193-abbb-c9d4af2af9f1",
+          "size": {
+            "height": 848.53452243958566,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 379,
+            "y": 65
+          },
+          "nodeIndex": "dim_calendario",
+          "nodeLineageTag": "a471908b-30c6-40d7-829a-c58d3055fb4f",
+          "size": {
+            "height": 217.3291139240506,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 663,
+            "y": 50
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "1e1d32a5-7c2f-4716-8c76-00352184dedd",
+          "size": {
+            "height": 755.69620253164567,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 79,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

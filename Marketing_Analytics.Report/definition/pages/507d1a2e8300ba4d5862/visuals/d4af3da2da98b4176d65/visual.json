@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "d4af3da2da98b4176d65",
+  "position": {
+    "x": 1050.8362779740871,
+    "y": 111.56654888103651,
+    "z": 11000,
+    "height": 93.474676089517075,
+    "width": 215.59481743227326,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Card Compras Catálogo"
+                }
+              },
+              "queryRef": "Medidas.Card Compras Catálogo",
+              "nativeQueryRef": "Card Compras Catálogo"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

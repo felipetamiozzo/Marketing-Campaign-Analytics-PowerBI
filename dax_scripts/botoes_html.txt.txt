@@ -1,0 +1,366 @@
+Botao HTML Cliente = 
+"
+<div style='
+width:100%;
+height:100%;
+padding:12px 10px;
+border-radius:18px;
+box-sizing:border-box;
+background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+gap:6px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.30);
+'>
+
+    <div style='
+    position:absolute;
+    top:-12px;
+    right:-12px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    '></div>
+
+    <div style='
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#02C39A;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+    '>
+
+        <svg xmlns='http://www.w3.org/2000/svg'
+             viewBox='0 0 24 24'
+             fill='white'
+             width='22'
+             height='22'>
+
+            <path d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/>
+        </svg>
+
+    </div>
+
+    <div style='
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+    '>
+
+        <div style='
+        font-size:14px;
+        font-weight:700;
+        color:#FFF;
+        letter-spacing:.8px;
+        '>
+            CLIENTE
+        </div>
+
+        <div style='
+        font-size:11px;
+        color:#FFD54F;
+        '>
+            ★★★
+        </div>
+
+    </div>
+
+</div>
+"
+
+Botao HTML Comportamento = 
+"
+<div style='
+width:100%;
+height:100%;
+padding:12px 10px;
+border-radius:18px;
+box-sizing:border-box;
+background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+gap:6px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.30);
+'>
+
+    <div style='
+    position:absolute;
+    top:-12px;
+    right:-12px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    '></div>
+
+    <div style='
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#02C39A;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+    '>
+
+        <svg xmlns='http://www.w3.org/2000/svg'
+             viewBox='0 0 24 24'
+             fill='white'
+             width='22'
+             height='22'>
+
+            <path d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/>
+        </svg>
+
+    </div>
+
+    <div style='
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+    '>
+
+        <div style='
+        font-size:14px;
+        font-weight:700;
+        color:#FFF;
+        letter-spacing:.8px;
+        text-align:center;
+        '>
+            COMPORTAMENTO
+        </div>
+
+        <div style='
+        font-size:11px;
+        color:#FFD54F;
+        '>
+            ★★★
+        </div>
+
+    </div>
+
+</div>
+"
+
+Botao HTML Campanhas = 
+"
+<div style='
+width:100%;
+height:100%;
+padding:12px 10px;
+border-radius:18px;
+box-sizing:border-box;
+background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+gap:6px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.30);
+'>
+
+    <div style='
+    position:absolute;
+    top:-12px;
+    right:-12px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    '></div>
+
+    <div style='
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#02C39A;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+    '>
+
+        <!-- SVG do megafone em formato outline baseado na imagem -->
+        <svg xmlns='http://www.w3.org/2000/svg'
+             viewBox='0 0 24 24'
+             fill='none'
+             stroke='white'
+             stroke-width='2'
+             stroke-linecap='round'
+             stroke-linejoin='round'
+             width='22'
+             height='22'>
+            
+            <g transform='rotate(-35 12 12)'>
+                <!-- Corpo principal do cone -->
+                <path d='M4 11.5 L15 7 V17 L4 12.5 Z'/>
+                <!-- Borda arredondada do alto-falante -->
+                <path d='M15 7 A2.5 2.5 0 0 1 15 17'/>
+                <!-- Bocal menor -->
+                <path d='M4 11.5 A1 1 0 0 0 4 12.5'/>
+                <!-- Alça do megafone -->
+                <path d='M7.5 14 V17.5 A1.5 1.5 0 0 0 10.5 17.5 V15.5'/>
+                <!-- Traços de som saindo do megafone -->
+                <path d='M18.5 6.5 L21 4'/>
+                <path d='M20.5 12 H23'/>
+                <path d='M18.5 17.5 L21 20'/>
+            </g>
+
+        </svg>
+
+    </div>
+
+    <div style='
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+    '>
+
+        <div style='
+        font-size:14px;
+        font-weight:700;
+        color:#FFF;
+        letter-spacing:.8px;
+        text-align:center;
+        '>
+            CAMPANHAS
+        </div>
+
+        <div style='
+        font-size:11px;
+        color:#FFD54F;
+        '>
+            ★★★
+        </div>
+
+    </div>
+
+</div>
+"
+
+Botao HTML Ponto Vendas = 
+"
+<div style='
+width:100%;
+height:100%;
+padding:12px 10px;
+border-radius:18px;
+box-sizing:border-box;
+background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+gap:6px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.30);
+'>
+
+    <div style='
+    position:absolute;
+    top:-12px;
+    right:-12px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    '></div>
+
+    <div style='
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#02C39A;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+    '>
+
+        <svg xmlns='http://www.w3.org/2000/svg'
+             viewBox='0 0 24 24'
+             fill='white'
+             width='22'
+             height='22'>
+
+            <path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/>
+
+        </svg>
+
+    </div>
+
+    <div style='
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+    '>
+
+        <div style='
+        font-size:14px;
+        font-weight:700;
+        color:#FFF;
+        letter-spacing:.8px;
+        text-align:center;
+        '>
+
+            PONTO DE VENDAS
+
+        </div>
+
+        <div style='
+        font-size:11px;
+        color:#FFD54F;
+        '>
+
+            ★★★
+
+        </div>
+
+    </div>
+
+</div>
+"

@@ -1,0 +1,301 @@
+table dados_mkt
+	lineageTag: 263f8791-f9b4-4193-abbb-c9d4af2af9f1
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: f4be7bfc-67f1-4cc8-8f22-7d5c9662a995
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ano Nascimento'
+		dataType: int64
+		formatString: 0
+		lineageTag: 671afac1-a765-4114-97d7-eec0827122a6
+		summarizeBy: sum
+		sourceColumn: Ano Nascimento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Escolaridade
+		dataType: string
+		lineageTag: 453af6f8-d79a-4cbc-a927-855fada9ea31
+		summarizeBy: none
+		sourceColumn: Escolaridade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado Civil'
+		dataType: string
+		lineageTag: 18adb00c-eeac-4442-9fa9-8bbcd411b27a
+		summarizeBy: none
+		sourceColumn: Estado Civil
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salario Anual'
+		dataType: decimal
+		formatString: 0
+		lineageTag: 4b87c0f0-297d-408e-925b-496403ccf7ea
+		summarizeBy: sum
+		sourceColumn: Salario Anual
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Filhos em Casa'
+		dataType: int64
+		formatString: 0
+		lineageTag: ac403b09-eeb3-4800-8d2b-c437d55f54cf
+		summarizeBy: sum
+		sourceColumn: Filhos em Casa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adolescentes em Casa'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7833bf0a-427f-4122-bcc6-80c330137d6a
+		summarizeBy: sum
+		sourceColumn: Adolescentes em Casa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Cadastro'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e18abff0-f766-4252-9501-815cd7b3c62b
+		summarizeBy: none
+		sourceColumn: Data Cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dias Desde Ultima Compra'
+		dataType: int64
+		formatString: 0
+		lineageTag: 42a0a85d-3063-4645-aecc-5ea1fa9dfde9
+		summarizeBy: sum
+		sourceColumn: Dias Desde Ultima Compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gasto com Eletronicos'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cdac8c6-2002-41b5-a591-0e671d4fe2a5
+		summarizeBy: sum
+		sourceColumn: Gasto com Eletronicos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gasto com Brinquedos'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7256d885-f08d-43a0-96f2-aab776ad9389
+		summarizeBy: sum
+		sourceColumn: Gasto com Brinquedos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gasto com Moveis'
+		dataType: int64
+		formatString: 0
+		lineageTag: 48960fba-60f1-4fe4-85ca-7438a88a7a47
+		summarizeBy: sum
+		sourceColumn: Gasto com Moveis
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gasto com Utilidades'
+		dataType: int64
+		formatString: 0
+		lineageTag: 82131c14-b873-4dbc-a2fb-9d44c9145c08
+		summarizeBy: sum
+		sourceColumn: Gasto com Utilidades
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gasto com Alimentos'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6be54600-48c8-47a8-a964-a27e34f812ce
+		summarizeBy: sum
+		sourceColumn: Gasto com Alimentos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gasto com Vestuario'
+		dataType: int64
+		formatString: 0
+		lineageTag: aecea2e4-d4e7-4a79-b28b-a8dcce217713
+		summarizeBy: sum
+		sourceColumn: Gasto com Vestuario
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero de Compras com Desconto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d165bd1-83e4-4046-97d7-7e3c53af9d54
+		summarizeBy: sum
+		sourceColumn: Numero de Compras com Desconto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero de Compras na Web'
+		dataType: int64
+		formatString: 0
+		lineageTag: e604794b-480d-4809-9a85-4e05c506a6b0
+		summarizeBy: sum
+		sourceColumn: Numero de Compras na Web
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero de Compras via Catalogo'
+		dataType: int64
+		formatString: 0
+		lineageTag: ca53585e-d3b8-4f38-8c13-95fefeb92693
+		summarizeBy: sum
+		sourceColumn: Numero de Compras via Catalogo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero de Compras na Loja'
+		dataType: int64
+		formatString: 0
+		lineageTag: fe9020d7-7637-433a-8c2d-e96aef95b1ab
+		summarizeBy: sum
+		sourceColumn: Numero de Compras na Loja
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Visitas WebSite Mes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e59b7c4-08fb-43ec-a5bd-f42d71f28710
+		summarizeBy: sum
+		sourceColumn: Numero Visitas WebSite Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compra na Campanha 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: a4cbe2e4-be92-4c53-bcbb-f3f4481c5858
+		summarizeBy: sum
+		sourceColumn: Compra na Campanha 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compra na Campanha 2'
+		dataType: int64
+		formatString: 0
+		lineageTag: d6ae7145-ca95-4e66-8ae9-6fc6114243df
+		summarizeBy: sum
+		sourceColumn: Compra na Campanha 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compra na Campanha 3'
+		dataType: int64
+		formatString: 0
+		lineageTag: d415a2ab-ba05-4b1f-8943-618386a1b52e
+		summarizeBy: sum
+		sourceColumn: Compra na Campanha 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compra na Campanha 4'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c6f6c7b-27b1-4929-bf0d-fba434b039ff
+		summarizeBy: sum
+		sourceColumn: Compra na Campanha 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compra na Campanha 5'
+		dataType: int64
+		formatString: 0
+		lineageTag: 29ffd708-d28d-4854-bd84-69b3cabe3119
+		summarizeBy: sum
+		sourceColumn: Compra na Campanha 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comprou
+		dataType: string
+		lineageTag: a4d97d6f-b60f-4d1a-86f0-c9c4d6d8b23a
+		summarizeBy: none
+		sourceColumn: Comprou
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		lineageTag: aeeeebe2-9a6b-4801-b613-31a208f3fbeb
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Gasto' = ```
+			
+			dados_mkt[Gasto com Eletronicos] + 
+			dados_mkt[Gasto com Brinquedos] + 
+			dados_mkt[Gasto com Moveis] + 
+			dados_mkt[Gasto com Utilidades] + 
+			dados_mkt[Gasto com Alimentos] + 
+			dados_mkt[Gasto com Vestuario]
+			```
+		formatString: 0
+		lineageTag: 5426e73d-f708-43e2-9341-cf13b8dea840
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Campanhas' = ```
+			
+			dados_mkt[Compra na Campanha 1] + 
+			dados_mkt[Compra na Campanha 2] + 
+			dados_mkt[Compra na Campanha 3] + 
+			dados_mkt[Compra na Campanha 4] + 
+			dados_mkt[Compra na Campanha 5]
+			```
+		formatString: 0
+		lineageTag: c7d32315-7744-49ac-a93b-6211f28be0a0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idade = YEAR(TODAY()) - dados_mkt[Ano Nascimento]
+		formatString: 0
+		lineageTag: 45281fb0-f95e-4d33-ad60-a94fe95b1e39
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = User
+
+	partition dados_mkt = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\Felipe\Desktop\PBI Data Science Academy\MODULO 3 - Análise de Dados de Mkt\Dados\dados_marketing.csv"),[Delimiter=";", Columns=27, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID", Int64.Type}, {"Ano Nascimento", Int64.Type}, {"Escolaridade", type text}, {"Estado Civil", type text}, {"Salario Anual", Int64.Type}, {"Filhos em Casa", Int64.Type}, {"Adolescentes em Casa", Int64.Type}, {"Data Cadastro", type date}, {"Dias Desde Ultima Compra", Int64.Type}, {"Gasto com Eletronicos", Int64.Type}, {"Gasto com Brinquedos", Int64.Type}, {"Gasto com Moveis", Int64.Type}, {"Gasto com Utilidades", Int64.Type}, {"Gasto com Alimentos", Int64.Type}, {"Gasto com Vestuario", Int64.Type}, {"Numero de Compras com Desconto", Int64.Type}, {"Numero de Compras na Web", Int64.Type}, {"Numero de Compras via Catalogo", Int64.Type}, {"Numero de Compras na Loja", Int64.Type}, {"Numero Visitas WebSite Mes", Int64.Type}, {"Compra na Campanha 1", Int64.Type}, {"Compra na Campanha 2", Int64.Type}, {"Compra na Campanha 3", Int64.Type}, {"Compra na Campanha 4", Int64.Type}, {"Compra na Campanha 5", Int64.Type}, {"Comprou", Int64.Type}, {"Pais", type text}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Tipo Alterado", each ([Salario Anual] <> null)),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Linhas Filtradas","Curso Superior","Superior",Replacer.ReplaceText,{"Escolaridade"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Valor Substituído","Segundo Grau","Ensino Médio",Replacer.ReplaceText,{"Escolaridade"}),
+				    #"Valor Substituído2" = Table.ReplaceValue(#"Valor Substituído1","Primeiro Grau","Ensino Fundamental",Replacer.ReplaceText,{"Escolaridade"}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Valor Substituído2",{{"Salario Anual", Currency.Type}, {"Comprou", type text}}),
+				    #"Valor Substituído3" = Table.ReplaceValue(#"Tipo Alterado1","0","Não comprou ",Replacer.ReplaceText,{"Comprou"}),
+				    #"Valor Substituído4" = Table.ReplaceValue(#"Valor Substituído3","1","Comprou",Replacer.ReplaceText,{"Comprou"})
+				in
+				    #"Valor Substituído4"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,9 @@
+relationship 94b15377-b906-4717-b95f-efbaf8e81513
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_calendario.Data
+	toColumn: LocalDateTable_e0b84615-430d-46e3-a98c-eac51beacc63.Date
+
+relationship 50ff1998-a6cc-e40f-ea4b-0f404141a4eb
+	fromColumn: dados_mkt.'Data Cadastro'
+	toColumn: dim_calendario.Data
+

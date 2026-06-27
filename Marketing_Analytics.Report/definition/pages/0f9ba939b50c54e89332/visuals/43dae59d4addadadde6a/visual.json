@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "43dae59d4addadadde6a",
+  "position": {
+    "x": 15,
+    "y": 642,
+    "z": 1000,
+    "height": 40,
+    "width": 237,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Felipe Tamiozzo ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4d8af0"
+                    }
+                  },
+                  {
+                    "value": "- Analista de Dados",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#e6e6e6"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

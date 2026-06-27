@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "b1c2d0c54a6373a62992",
+  "position": {
+    "x": 22.614840989399291,
+    "y": 108.5512367491166,
+    "z": 6000,
+    "height": 94.982332155477025,
+    "width": 189.96466431095405,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Card Total Clientes"
+                }
+              },
+              "queryRef": "Medidas.Card Total Clientes",
+              "nativeQueryRef": "Card Total Clientes"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,22 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dados_mkt","dim_calendario"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dados_mkt
+ref table DateTableTemplate_3eafab2c-eb6b-476c-82ed-7b52638b5c26
+ref table dim_calendario
+ref table LocalDateTable_e0b84615-430d-46e3-a98c-eac51beacc63
+ref table Medidas
+
+ref cultureInfo pt-BR
+

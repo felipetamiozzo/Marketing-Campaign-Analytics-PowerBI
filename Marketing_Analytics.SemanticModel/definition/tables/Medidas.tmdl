@@ -1,0 +1,996 @@
+table Medidas
+	lineageTag: 1e1d32a5-7c2f-4716-8c76-00352184dedd
+
+	measure 'Tx Conversão Geral' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS(dados_mkt), dados_mkt[Comprou] = 1),
+			    COUNTROWS(dados_mkt)
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: 0fe613bc-e5df-4542-bee1-157673fdb5b7
+
+	measure 'Tx Coversão Web' =
+			DIVIDE(
+			    SUM(dados_mkt[Numero de Compras na Web]),
+			    SUM(dados_mkt[Numero Visitas WebSite Mes]))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1e18ed83-27db-4f7b-b083-63dcceeefd8f
+
+	measure 'Total Visitas' = SUM(dados_mkt[Numero Visitas WebSite Mes])
+		formatString: 0
+		lineageTag: 0f757a72-c7b6-41d0-aa68-2c79d0115fad
+
+	measure 'Ticket Médio' = ```
+			AVERAGE(dados_mkt[Total Gasto])
+			
+			```
+		lineageTag: 5d40f3c7-b4f5-4ec9-a4bd-ad5720f85530
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Retenção Campanhas' =
+			
+			VAR ComprouUma = CALCULATE(COUNTROWS(dados_mkt), dados_mkt[Total Campanhas] >= 1)
+			VAR ComprouDuas = CALCULATE(COUNTROWS(dados_mkt), dados_mkt[Total Campanhas] >= 2)
+			RETURN DIVIDE(ComprouDuas, ComprouUma)
+		lineageTag: f6b1a6fd-f0fb-42fa-bb3f-52beccc9ebd7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Média Compras Web' = AVERAGE(dados_mkt[Numero de Compras na Web])
+		lineageTag: c741ed15-e5c5-4312-b39f-e4cff759d4ce
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Média Visitas' = AVERAGE(dados_mkt[Numero Visitas WebSite Mes])
+		lineageTag: c77f6b55-b1ea-4731-b08b-16bb2e63e4b5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tx Participação' =
+			
+			DIVIDE(
+			    [Total Gasto Medida],
+			    CALCULATE(
+			        [Total Gasto Medida],
+			        ALL(dados_mkt[Pais])
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0fd9e2de-7418-432f-9bde-868a8c9ca665
+
+	measure 'Total Gasto Medida' =
+			
+			SUM(dados_mkt[Total Gasto])
+		formatString: 0
+		lineageTag: 1d1af576-ee17-40f6-8c60-6e58c49a2e39
+
+	measure 'Total Clientes' = DISTINCTCOUNT(dados_mkt[ID])
+		formatString: 0
+		lineageTag: 1e434d2b-fc3b-42c6-b2eb-64c7cc7a3005
+
+	measure 'Card Total Clientes' =
+			
+			VAR Clientes = FORMAT([Total Clientes], "#,##0")
+			
+			RETURN
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			border-radius:14px;
+			padding:10px 14px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,
+			#4B3FAF 0%,
+			#5C4CE0 45%,
+			#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			'>
+			
+			<div style='
+			position:absolute;
+			top:-30px;
+			right:-20px;
+			width:90px;
+			height:90px;
+			border-radius:50%;
+			background:rgba(255,255,255,.08);
+			'></div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:100%;
+			'>
+			
+			<div>
+			
+			<div style='
+			font-size:13px;
+			color:#E9E5FF;
+			margin-bottom:4px;
+			'>
+			Total de Clientes
+			</div>
+			
+			<div style='
+			font-size:30px;
+			font-weight:700;
+			color:#FFD54F;
+			line-height:30px;
+			'>
+			" & Clientes & "
+			</div>
+			
+			</div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:48px;
+			height:48px;
+			border-radius:50%;
+			background-color:#02C39A;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+			  <path d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/>
+			</svg>
+			</div>
+			
+			</div>
+			
+			</div>
+			"
+		lineageTag: 3cec44db-75d1-42ff-bcf6-67a282c5505c
+
+	measure 'Card Média Salarial' =
+			
+			VAR Valor = FORMAT([Media Salarial],"#,##0") & " Mil"
+			
+			RETURN
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			border-radius:14px;
+			padding:10px 14px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,
+			#4B3FAF 0%,
+			#5C4CE0 45%,
+			#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			'>
+			
+			<div style='
+			position:absolute;
+			top:-30px;
+			right:-20px;
+			width:90px;
+			height:90px;
+			border-radius:50%;
+			background:rgba(255,255,255,.08);
+			'></div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:100%;
+			'>
+			
+			<div>
+			
+			<div style='
+			font-size:13px;
+			color:#E9E5FF;
+			margin-bottom:4px;
+			'>
+			Média Salarial
+			</div>
+			
+			<div style='
+			font-size:30px;
+			font-weight:700;
+			color:#FFD54F;
+			line-height:30px;
+			'>
+			" & Valor & "
+			</div>
+			
+			</div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:48px;
+			height:48px;
+			border-radius:50%;
+			background-color:#02C39A;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+			  <path d='M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z'/>
+			</svg>
+			</div>
+			
+			</div>
+			
+			</div>
+			"
+		lineageTag: 04281933-6e43-4d26-a185-d93ebd3abcc5
+
+	measure 'Media Salarial' =
+			DIVIDE(
+			    AVERAGE(dados_mkt[Salario Anual]),
+			    1000
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: a68abb67-3c2b-4039-938b-fe778f1a29d8
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Média de Idade' =
+			
+			ROUND(
+			    AVERAGE(dados_mkt[Idade]),
+			    0
+			)
+		lineageTag: b4d83376-7ca0-4651-894a-7a7ba76728a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Compras Web' =
+			
+			DIVIDE(
+			    SUM(dados_mkt[Numero de Compras na Web]),
+			    1000
+			)
+		lineageTag: 52b26dc6-2c7e-40cf-8907-42587a83a353
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Compras Loja' =
+			
+			DIVIDE(
+			    SUM(dados_mkt[Numero de Compras na Loja]),
+			    1000
+			)
+		lineageTag: 75770d0f-de52-449f-9d85-5d740797dbcc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Compras Catálogo' =
+			
+			DIVIDE(
+			    SUM(dados_mkt[Numero de Compras via Catalogo]),
+			    1000
+			)
+		lineageTag: e62e5161-5e41-4472-b9de-c1d178e6daee
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Card Média Idade' =
+			
+			VAR Valor = FORMAT([Média de Idade], "0")
+			
+			RETURN
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			border-radius:14px;
+			padding:10px 14px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,
+			#4B3FAF 0%,
+			#5C4CE0 45%,
+			#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			'>
+			
+			<!-- brilho -->
+			<div style='
+			position:absolute;
+			top:-30px;
+			right:-20px;
+			width:90px;
+			height:90px;
+			border-radius:50%;
+			background:rgba(255,255,255,.08);
+			'></div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:100%;
+			'>
+			
+			<div>
+			
+			<div style='
+			font-size:13px;
+			color:#E9E5FF;
+			margin-bottom:4px;
+			'>
+			Média de Idade
+			</div>
+			
+			<div style='
+			font-size:30px;
+			font-weight:700;
+			color:#FFD54F;
+			line-height:30px;
+			'>
+			" & Valor & "
+			</div>
+			
+			</div>
+			
+			<!-- Círculo Verde com Ícone SVG de Bolo (Idade) Branco -->
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:48px;
+			height:48px;
+			border-radius:50%;
+			background-color:#02C39A;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+			  <path d='M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm6 3h-5V7h-2v2H6c-1.66 0-3 1.34-3 3v9c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-9c0-1.66-1.34-3-3-3zm1 11H5v-3c.9-.01 2-.51 2-1.24 0-.46.33-.86.78-.96.49-.11 1.01-.11 1.5.01.44.11.72.5.72.95 0 .73 1.1 1.23 2 1.24.9-.01 2-.51 2-1.24 0-.46.33-.86.78-.96.49-.11 1.01-.11 1.5.01.44.11.72.5.72.95 0 .73 1.1 1.23 2 1.24v3zm-9-4.24c-.9.01-2 .51-2 1.24 0 .46-.33.86-.78.96-.49.11-1.01.11-1.5-.01C6.28 17.1 6 16.71 6 16.26c0-.73-1.1-1.23-2-1.24v-3h16v3c-.9.01-2 .51-2 1.24 0 .46-.33.86-.78.96-.49.11-1.01.11-1.5-.01-.44-.11-.72-.5-.72-.95 0-.73-1.1-1.23-2-1.24z'/>
+			</svg>
+			</div>
+			
+			</div>
+			
+			</div>
+			"
+		lineageTag: f29c4ac3-0b74-46b3-b754-6901720cf8a3
+
+	measure 'Card Compras Web' =
+			
+			VAR Valor = FORMAT([Compras Web], "#,##0") & " Mil"
+			
+			RETURN
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			border-radius:14px;
+			padding:10px 14px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,
+			#4B3FAF 0%,
+			#5C4CE0 45%,
+			#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			'>
+			
+			<div style='
+			position:absolute;
+			top:-30px;
+			right:-20px;
+			width:90px;
+			height:90px;
+			border-radius:50%;
+			background:rgba(255,255,255,.08);
+			'></div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:100%;
+			'>
+			
+			<div>
+			
+			<div style='
+			font-size:13px;
+			color:#E9E5FF;
+			margin-bottom:4px;
+			'>
+			Compras na Web
+			</div>
+			
+			<div style='
+			font-size:30px;
+			font-weight:700;
+			color:#FFD54F;
+			line-height:30px;
+			'>
+			" & Valor & "
+			</div>
+			
+			</div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:48px;
+			height:48px;
+			border-radius:50%;
+			background-color:#02C39A;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+			  <path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm1.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z'/>
+			</svg>
+			</div>
+			
+			</div>
+			
+			</div>
+			"
+		lineageTag: 8f74dbdf-2c26-4e54-b4d8-e8a97e223586
+
+	measure 'Card Compras Loja' =
+			
+			VAR Valor = FORMAT([Compras Loja], "#,##0") & " Mil"
+			
+			RETURN
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			border-radius:14px;
+			padding:10px 14px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,
+			#4B3FAF 0%,
+			#5C4CE0 45%,
+			#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			'>
+			
+			<div style='
+			position:absolute;
+			top:-30px;
+			right:-20px;
+			width:90px;
+			height:90px;
+			border-radius:50%;
+			background:rgba(255,255,255,.08);
+			'></div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:100%;
+			'>
+			
+			<div>
+			
+			<div style='
+			font-size:13px;
+			color:#E9E5FF;
+			margin-bottom:4px;
+			'>
+			Compras na Loja
+			</div>
+			
+			<div style='
+			font-size:30px;
+			font-weight:700;
+			color:#FFD54F;
+			line-height:30px;
+			'>
+			" & Valor & "
+			</div>
+			
+			</div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:48px;
+			height:48px;
+			border-radius:50%;
+			background-color:#02C39A;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+			  <path d='M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z'/>
+			</svg>
+			</div>
+			
+			</div>
+			
+			</div>
+			"
+		lineageTag: b538afad-e449-414b-a509-b78c79c3699f
+
+	measure 'Card Compras Catálogo' =
+			
+			VAR Valor = FORMAT([Compras Catálogo], "#,##0") & " Mil"
+			
+			RETURN
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			border-radius:14px;
+			padding:10px 14px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,
+			#4B3FAF 0%,
+			#5C4CE0 45%,
+			#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			'>
+			
+			<div style='
+			position:absolute;
+			top:-30px;
+			right:-20px;
+			width:90px;
+			height:90px;
+			border-radius:50%;
+			background:rgba(255,255,255,.08);
+			'></div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:100%;
+			'>
+			
+			<div>
+			
+			<div style='
+			font-size:13px;
+			color:#E9E5FF;
+			margin-bottom:4px;
+			'>
+			Compras Via Catálogo
+			</div>
+			
+			<div style='
+			font-size:30px;
+			font-weight:700;
+			color:#FFD54F;
+			line-height:30px;
+			'>
+			" & Valor & "
+			</div>
+			
+			</div>
+			
+			<div style='
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:48px;
+			height:48px;
+			border-radius:50%;
+			background-color:#02C39A;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+			  <path d='M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.09C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z'/>
+			</svg>
+			</div>
+			
+			</div>
+			
+			</div>
+			"
+		lineageTag: ce51c713-166a-4aa5-a2f7-cb6da4ec00bb
+
+	measure 'Botao HTML Cliente' =
+			
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			padding:12px 10px;
+			border-radius:18px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			
+			gap:6px;
+			
+			box-shadow:0 4px 10px rgba(0,0,0,.30);
+			'>
+			
+			    <div style='
+			    position:absolute;
+			    top:-12px;
+			    right:-12px;
+			    width:60px;
+			    height:60px;
+			    border-radius:50%;
+			    background:rgba(255,255,255,.05);
+			    '></div>
+			
+			    <div style='
+			    width:40px;
+			    height:40px;
+			    border-radius:50%;
+			    background:#02C39A;
+			
+			    display:flex;
+			    align-items:center;
+			    justify-content:center;
+			
+			    box-shadow:0 2px 5px rgba(0,0,0,.25);
+			    '>
+			
+			        <svg xmlns='http://www.w3.org/2000/svg'
+			             viewBox='0 0 24 24'
+			             fill='white'
+			             width='22'
+			             height='22'>
+			
+			            <path d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/>
+			        </svg>
+			
+			    </div>
+			
+			    <div style='
+			    display:flex;
+			    flex-direction:column;
+			    align-items:center;
+			    gap:2px;
+			    '>
+			
+			        <div style='
+			        font-size:14px;
+			        font-weight:700;
+			        color:#FFF;
+			        letter-spacing:.8px;
+			        '>
+			            CLIENTE
+			        </div>
+			
+			        <div style='
+			        font-size:11px;
+			        color:#FFD54F;
+			        '>
+			            ★★★
+			        </div>
+			
+			    </div>
+			
+			</div>
+			"
+		lineageTag: c51fc7f8-aebb-42db-8b95-2f301b733bb4
+
+	measure 'Botao HTML Comportamento' =
+			
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			padding:12px 10px;
+			border-radius:18px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			
+			gap:6px;
+			
+			box-shadow:0 4px 10px rgba(0,0,0,.30);
+			'>
+			
+			    <div style='
+			    position:absolute;
+			    top:-12px;
+			    right:-12px;
+			    width:60px;
+			    height:60px;
+			    border-radius:50%;
+			    background:rgba(255,255,255,.05);
+			    '></div>
+			
+			    <div style='
+			    width:40px;
+			    height:40px;
+			    border-radius:50%;
+			    background:#02C39A;
+			
+			    display:flex;
+			    align-items:center;
+			    justify-content:center;
+			
+			    box-shadow:0 2px 5px rgba(0,0,0,.25);
+			    '>
+			
+			        <svg xmlns='http://www.w3.org/2000/svg'
+			             viewBox='0 0 24 24'
+			             fill='white'
+			             width='22'
+			             height='22'>
+			
+			            <path d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/>
+			        </svg>
+			
+			    </div>
+			
+			    <div style='
+			    display:flex;
+			    flex-direction:column;
+			    align-items:center;
+			    gap:2px;
+			    '>
+			
+			        <div style='
+			        font-size:14px;
+			        font-weight:700;
+			        color:#FFF;
+			        letter-spacing:.8px;
+			        text-align:center;
+			        '>
+			            COMPORTAMENTO
+			        </div>
+			
+			        <div style='
+			        font-size:11px;
+			        color:#FFD54F;
+			        '>
+			            ★★★
+			        </div>
+			
+			    </div>
+			
+			</div>
+			"
+		lineageTag: 632b79e5-4f59-4bcb-8b9e-8df6d5fad3a9
+
+	measure 'Botao HTML Campanhas' = ```
+			
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			padding:12px 10px;
+			border-radius:18px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			
+			gap:6px;
+			
+			box-shadow:0 4px 10px rgba(0,0,0,.30);
+			'>
+			
+			    <div style='
+			    position:absolute;
+			    top:-12px;
+			    right:-12px;
+			    width:60px;
+			    height:60px;
+			    border-radius:50%;
+			    background:rgba(255,255,255,.05);
+			    '></div>
+			
+			    <div style='
+			    width:40px;
+			    height:40px;
+			    border-radius:50%;
+			    background:#02C39A;
+			
+			    display:flex;
+			    align-items:center;
+			    justify-content:center;
+			
+			    box-shadow:0 2px 5px rgba(0,0,0,.25);
+			    '>
+			
+			        <!-- SVG do megafone em formato outline baseado na imagem -->
+			        <svg xmlns='http://www.w3.org/2000/svg'
+			             viewBox='0 0 24 24'
+			             fill='none'
+			             stroke='white'
+			             stroke-width='2'
+			             stroke-linecap='round'
+			             stroke-linejoin='round'
+			             width='22'
+			             height='22'>
+			            
+			            <g transform='rotate(-35 12 12)'>
+			                <!-- Corpo principal do cone -->
+			                <path d='M4 11.5 L15 7 V17 L4 12.5 Z'/>
+			                <!-- Borda arredondada do alto-falante -->
+			                <path d='M15 7 A2.5 2.5 0 0 1 15 17'/>
+			                <!-- Bocal menor -->
+			                <path d='M4 11.5 A1 1 0 0 0 4 12.5'/>
+			                <!-- Alça do megafone -->
+			                <path d='M7.5 14 V17.5 A1.5 1.5 0 0 0 10.5 17.5 V15.5'/>
+			                <!-- Traços de som saindo do megafone -->
+			                <path d='M18.5 6.5 L21 4'/>
+			                <path d='M20.5 12 H23'/>
+			                <path d='M18.5 17.5 L21 20'/>
+			            </g>
+			
+			        </svg>
+			
+			    </div>
+			
+			    <div style='
+			    display:flex;
+			    flex-direction:column;
+			    align-items:center;
+			    gap:2px;
+			    '>
+			
+			        <div style='
+			        font-size:14px;
+			        font-weight:700;
+			        color:#FFF;
+			        letter-spacing:.8px;
+			        text-align:center;
+			        '>
+			            CAMPANHAS
+			        </div>
+			
+			        <div style='
+			        font-size:11px;
+			        color:#FFD54F;
+			        '>
+			            ★★★
+			        </div>
+			
+			    </div>
+			
+			</div>
+			"
+			```
+		lineageTag: b355de0e-cbd7-4280-94ca-388265bc2762
+
+	measure 'Botao HTML Ponto Vendas' =
+			
+			"
+			<div style='
+			width:100%;
+			height:100%;
+			padding:12px 10px;
+			border-radius:18px;
+			box-sizing:border-box;
+			background:linear-gradient(135deg,#4B3FAF 0%,#5C4CE0 45%,#733EEE 100%);
+			font-family:Segoe UI;
+			position:relative;
+			overflow:hidden;
+			
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			
+			gap:6px;
+			
+			box-shadow:0 4px 10px rgba(0,0,0,.30);
+			'>
+			
+			    <div style='
+			    position:absolute;
+			    top:-12px;
+			    right:-12px;
+			    width:60px;
+			    height:60px;
+			    border-radius:50%;
+			    background:rgba(255,255,255,.05);
+			    '></div>
+			
+			    <div style='
+			    width:40px;
+			    height:40px;
+			    border-radius:50%;
+			    background:#02C39A;
+			
+			    display:flex;
+			    align-items:center;
+			    justify-content:center;
+			
+			    box-shadow:0 2px 5px rgba(0,0,0,.25);
+			    '>
+			
+			        <svg xmlns='http://www.w3.org/2000/svg'
+			             viewBox='0 0 24 24'
+			             fill='white'
+			             width='22'
+			             height='22'>
+			
+			            <path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/>
+			
+			        </svg>
+			
+			    </div>
+			
+			    <div style='
+			    display:flex;
+			    flex-direction:column;
+			    align-items:center;
+			    gap:2px;
+			    '>
+			
+			        <div style='
+			        font-size:14px;
+			        font-weight:700;
+			        color:#FFF;
+			        letter-spacing:.8px;
+			        text-align:center;
+			        '>
+			
+			            PONTO DE VENDAS
+			
+			        </div>
+			
+			        <div style='
+			        font-size:11px;
+			        color:#FFD54F;
+			        '>
+			
+			            ★★★
+			
+			        </div>
+			
+			    </div>
+			
+			</div>
+			"
+		lineageTag: 2482141b-fe33-4837-af70-27a68f5e461e
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: ea6c5143-4357-469e-92b2-01ae564d4373
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = calculated
+		mode: import
+		source = Row("Value", BLANK())
+
+	annotation PBI_Id = d3b9ffedc77c4608a6a655843f9de5a7
+

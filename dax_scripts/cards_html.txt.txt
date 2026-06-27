@@ -1,0 +1,469 @@
+Card Total Clientes = 
+VAR Clientes = FORMAT([Total Clientes], "#,##0")
+
+RETURN
+"
+<div style='
+width:100%;
+height:100%;
+border-radius:14px;
+padding:10px 14px;
+box-sizing:border-box;
+background:linear-gradient(135deg,
+#4B3FAF 0%,
+#5C4CE0 45%,
+#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+'>
+
+<div style='
+position:absolute;
+top:-30px;
+right:-20px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+'></div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:100%;
+'>
+
+<div>
+
+<div style='
+font-size:13px;
+color:#E9E5FF;
+margin-bottom:4px;
+'>
+Total de Clientes
+</div>
+
+<div style='
+font-size:30px;
+font-weight:700;
+color:#FFD54F;
+line-height:30px;
+'>
+" & Clientes & "
+</div>
+
+</div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background-color:#02C39A;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+  <path d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/>
+</svg>
+</div>
+
+</div>
+
+</div>
+"
+
+Card Média Salarial = 
+VAR Valor = FORMAT([Media Salarial],"#,##0") & " Mil"
+
+RETURN
+"
+<div style='
+width:100%;
+height:100%;
+border-radius:14px;
+padding:10px 14px;
+box-sizing:border-box;
+background:linear-gradient(135deg,
+#4B3FAF 0%,
+#5C4CE0 45%,
+#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+'>
+
+<div style='
+position:absolute;
+top:-30px;
+right:-20px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+'></div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:100%;
+'>
+
+<div>
+
+<div style='
+font-size:13px;
+color:#E9E5FF;
+margin-bottom:4px;
+'>
+Média Salarial
+</div>
+
+<div style='
+font-size:30px;
+font-weight:700;
+color:#FFD54F;
+line-height:30px;
+'>
+" & Valor & "
+</div>
+
+</div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background-color:#02C39A;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+  <path d='M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z'/>
+</svg>
+</div>
+
+</div>
+
+</div>
+"
+
+Card Média Idade = 
+VAR Valor = FORMAT([Média de Idade], "0")
+
+RETURN
+"
+<div style='
+width:100%;
+height:100%;
+border-radius:14px;
+padding:10px 14px;
+box-sizing:border-box;
+background:linear-gradient(135deg,
+#4B3FAF 0%,
+#5C4CE0 45%,
+#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+'>
+
+<!-- brilho -->
+<div style='
+position:absolute;
+top:-30px;
+right:-20px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+'></div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:100%;
+'>
+
+<div>
+
+<div style='
+font-size:13px;
+color:#E9E5FF;
+margin-bottom:4px;
+'>
+Média de Idade
+</div>
+
+<div style='
+font-size:30px;
+font-weight:700;
+color:#FFD54F;
+line-height:30px;
+'>
+" & Valor & "
+</div>
+
+</div>
+
+<!-- Círculo Verde com Ícone SVG de Bolo (Idade) Branco -->
+<div style='
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background-color:#02C39A;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+  <path d='M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm6 3h-5V7h-2v2H6c-1.66 0-3 1.34-3 3v9c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-9c0-1.66-1.34-3-3-3zm1 11H5v-3c.9-.01 2-.51 2-1.24 0-.46.33-.86.78-.96.49-.11 1.01-.11 1.5.01.44.11.72.5.72.95 0 .73 1.1 1.23 2 1.24.9-.01 2-.51 2-1.24 0-.46.33-.86.78-.96.49-.11 1.01-.11 1.5.01.44.11.72.5.72.95 0 .73 1.1 1.23 2 1.24v3zm-9-4.24c-.9.01-2 .51-2 1.24 0 .46-.33.86-.78.96-.49.11-1.01.11-1.5-.01C6.28 17.1 6 16.71 6 16.26c0-.73-1.1-1.23-2-1.24v-3h16v3c-.9.01-2 .51-2 1.24 0 .46-.33.86-.78.96-.49.11-1.01.11-1.5-.01-.44-.11-.72-.5-.72-.95 0-.73-1.1-1.23-2-1.24z'/>
+</svg>
+</div>
+
+</div>
+
+</div>
+"
+
+Card Compras Web = 
+VAR Valor = FORMAT([Compras Web], "#,##0") & " Mil"
+
+RETURN
+"
+<div style='
+width:100%;
+height:100%;
+border-radius:14px;
+padding:10px 14px;
+box-sizing:border-box;
+background:linear-gradient(135deg,
+#4B3FAF 0%,
+#5C4CE0 45%,
+#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+'>
+
+<div style='
+position:absolute;
+top:-30px;
+right:-20px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+'></div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:100%;
+'>
+
+<div>
+
+<div style='
+font-size:13px;
+color:#E9E5FF;
+margin-bottom:4px;
+'>
+Compras na Web
+</div>
+
+<div style='
+font-size:30px;
+font-weight:700;
+color:#FFD54F;
+line-height:30px;
+'>
+" & Valor & "
+</div>
+
+</div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background-color:#02C39A;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+  <path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm1.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z'/>
+</svg>
+</div>
+
+</div>
+
+</div>
+"
+
+Card Compras Loja = 
+VAR Valor = FORMAT([Compras Loja], "#,##0") & " Mil"
+
+RETURN
+"
+<div style='
+width:100%;
+height:100%;
+border-radius:14px;
+padding:10px 14px;
+box-sizing:border-box;
+background:linear-gradient(135deg,
+#4B3FAF 0%,
+#5C4CE0 45%,
+#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+'>
+
+<div style='
+position:absolute;
+top:-30px;
+right:-20px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+'></div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:100%;
+'>
+
+<div>
+
+<div style='
+font-size:13px;
+color:#E9E5FF;
+margin-bottom:4px;
+'>
+Compras na Loja
+</div>
+
+<div style='
+font-size:30px;
+font-weight:700;
+color:#FFD54F;
+line-height:30px;
+'>
+" & Valor & "
+</div>
+
+</div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background-color:#02C39A;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+  <path d='M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z'/>
+</svg>
+</div>
+
+</div>
+
+</div>
+"
+
+Card Compras Catálogo = 
+VAR Valor = FORMAT([Compras Catálogo], "#,##0") & " Mil"
+
+RETURN
+"
+<div style='
+width:100%;
+height:100%;
+border-radius:14px;
+padding:10px 14px;
+box-sizing:border-box;
+background:linear-gradient(135deg,
+#4B3FAF 0%,
+#5C4CE0 45%,
+#733EEE 100%);
+font-family:Segoe UI;
+position:relative;
+overflow:hidden;
+'>
+
+<div style='
+position:absolute;
+top:-30px;
+right:-20px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+'></div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:100%;
+'>
+
+<div>
+
+<div style='
+font-size:13px;
+color:#E9E5FF;
+margin-bottom:4px;
+'>
+Compras Via Catálogo
+</div>
+
+<div style='
+font-size:30px;
+font-weight:700;
+color:#FFD54F;
+line-height:30px;
+'>
+" & Valor & "
+</div>
+
+</div>
+
+<div style='
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:50%;
+background-color:#02C39A;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='28px' height='28px'>
+  <path d='M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.09C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z'/>
+</svg>
+</div>
+
+</div>
+
+</div>
+"
