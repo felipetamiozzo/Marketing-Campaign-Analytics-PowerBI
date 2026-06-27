@@ -1,6 +1,6 @@
 # 📊 Marketing Analytics Dashboard | Power BI
 
-![Capa do Projeto](assets/capa_dashboard.png) *(Substitua pelo caminho da sua imagem)*
+![Capa do Projeto](assets/capa.png) 
 
 ## 📋 Visão Geral
 Este projeto de Análise de Dados foi desenvolvido para avaliar a performance de campanhas de marketing, comportamento de clientes e conversão em pontos de vendas. O objetivo principal é transformar dados brutos de marketing em insights acionáveis, permitindo que a equipe de negócios direcione campanhas com maior precisão e ROI (Retorno sobre Investimento).
@@ -44,7 +44,7 @@ Análise de conversão (Comprou vs. Não Comprou) com paleta de cores focada em 
 
 ### 4. Ponto de Vendas
 Evolução temporal e ranking por categorias e top países consumidores.
-![Visão Ponto de Vendas](assets/visao_pdv.png)
+![Visão Ponto de Vendas](assets/visao_pv.png)
 
 ---
 
